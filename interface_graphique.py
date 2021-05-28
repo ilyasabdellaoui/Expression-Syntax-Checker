@@ -1,5 +1,5 @@
 from tkinter import *
-import tkinter as tk # you are a idiot
+import tkinter as tk 
 from tkinter.messagebox import showinfo
 
 #WINDOW CHARACTERISTIQUE
