@@ -1,35 +1,35 @@
-def create_stack():
+def creer_pile():
     return []
 
-def empiler(x, stack):
-    stack.append(x)
+def empiler(x, pile):
+    pile.append(x)
 
-def depiler(stack):
-    return stack.pop()
+def depiler(pile):
+    return pile.pop()
 
-def height(stack):
-    return len(stack)
+def hauteur(pile):
+    return len(pile)
 
-def is_empty(stack):
-    return height(stack)==0
+def est_pile_vide(pile):
+    return hauteur(pile)==0
 
-def sommet(stack):
-    return stack[-1]
+def sommet(pile):
+    return pile[-1]
 
 def verify(exp):
 #Creation d'un pile vide:
-    p=create_stack()
+    p=creer_pile()
 #Parcourir la liste exp qui contient l'expression mathematique:
     for i in range(len(exp)):
         if exp[i]=='(':
             empiler(i, p)
         elif exp[i]==')':
-            if is_empty(p):
+            if est_pile_vide(p):
                 return ") à l'indice "+str(i)+" n'est pas ouverte !"
             else:
                 j=depiler(p)
                 print("Parenthése {} et {} correct".format(i,j))
-    if is_empty(p):
+    if est_pile_vide(p):
         return 'Parenthésage valide'
     else:
         return "à l'indice "+str(sommet(p))+" n'est pas fermée !"
