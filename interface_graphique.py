@@ -68,7 +68,8 @@ def verify():
         elif exp[i]==')':
             if is_empty(p):
                 r.set(") à l'indice "+str(i)+" n'est pas ouverte !")
-                empiler(i, p)                                                      # here
+                empiler(i, p)                                                 #here
+                break                                                        # here
             else:
                 j=depiler(p)
                 r.set("Parenthése {} et {} correct".format(i,j))
