@@ -21,18 +21,15 @@ def verify(exp):
     p=creer_pile()
 #Parcourir la liste exp qui contient l'expression mathematique:
     for i in range(len(exp)):
-        if exp[i]=='(':
+        if exp[i] == '(':
             empiler(i, p)
-        elif exp[i]==')':
+        elif exp[i] == ')':
             if est_pile_vide(p):
-                return ") à l'indice "+str(i)+" n'est pas ouverte !"
+                return "Parenthésage non valide: Une parenthèse fermante ')' à l'indice "+str(i)+" n'est pas ouverte !"
             else:
-                j=depiler(p)
-                print("Parenthése {} et {} correct".format(i,j))
+                j = depiler(p)
+                print("Parenthéses {} et {} correct".format(i, j))
     if est_pile_vide(p):
         return 'Parenthésage valide'
     else:
-        return "à l'indice "+str(sommet(p))+" n'est pas fermée !"
-
-exp="(a+b*(c+d*(e+f)))"
-print(verify(exp))
+        return "Parenthésage non valide: Une parenthèse ouvrante '(' à l'indice "+str(sommet(p))+" n'est pas fermée !"
