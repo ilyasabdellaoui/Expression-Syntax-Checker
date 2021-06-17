@@ -1,5 +1,4 @@
 from tkinter import *
-import tkinter as tk
 from tkinter.messagebox import showinfo
 
 #WINDOW CHARACTERISTIQUE
@@ -68,17 +67,14 @@ def verify():
         elif exp[i]==')' or exp[i] == ']' or exp[i] == '}':
             if is_empty(p):
                 r.set("Parenthésage non valide: \nUne parenthèse fermante à l'indice "+str(i)+" n'est pas ouverte !")
-                empiler(i, p)
                 break
             else:
                 j=depiler(p)
                 r.set("Parenthése {} et {} correct".format(i,j))
-    if not is_empty(p):
-        r.set("Parenthésage non valide: \nune parenthèse ouvrante à l'indice " + str(sommet(p)) + " n'est pas fermée !")
-
-    elif is_empty(p):
-        r.set("Parenthésage valide")
-
+        if is_empty(p):
+            r.set("Parenthésage valide")
+        else:
+            r.set("Parenthésage non valide: \nune parenthèse ouvrante à l'indice " + str(sommet(p)) + " n'est pas fermée !")
     showinfo("Résultats", resultat.get())
 resultat = Entry(l, textvariable=r, font=("Courrier", 20), fg='#4065A4', bg='White', width=30)
 
