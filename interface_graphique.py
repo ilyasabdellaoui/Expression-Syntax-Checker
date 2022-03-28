@@ -11,7 +11,7 @@ window.config(bg='#4065A4')
 
 #MENUBAR
 def alert():
-    showinfo("alerte", "Created by Othman el fessak HHHH !")
+    showinfo("alerte", "Created with love by two fessaka !")
 menubar = Menu(window)
 menu1 = Menu(menubar, tearoff=0)
 menu1.add_command(label="Créer", command=alert)
