@@ -9,7 +9,7 @@ It was developed by two passionate students at CPGE Salmane AL Farissi as a year
 </p>
 
 <p align="center">
-  <img alt="Version" src="https://img.shields.io/badge/version-1.5.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version-1.5.1-blue.svg?cacheSeconds=2592000" />
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
