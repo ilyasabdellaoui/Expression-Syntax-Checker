@@ -21,9 +21,6 @@ def is_empty(stack):
 def sommet(stack):
     return stack[-1]
 
-OPENING_PARENTHESES = ['(', '[', '{', '<']
-CLOSING_PARENTHESES = [')', ']', '}', '>']
-
 # WINDOW CHARACTERISTICS
 window = Tk()
 window.title("Expression Syntax Checker")
@@ -137,6 +134,9 @@ result_frame.pack(fill="x")
 
 result_label = Label(result_frame, textvariable=result_var, font=("Trebuchet MS", 20), bg="#363537", fg="white")
 result_label.pack(expand=True, anchor=CENTER)
+
+OPENING_PARENTHESES = ['(', '[', '{', '<']
+CLOSING_PARENTHESES = [')', ']', '}', '>']
 
 # SYNTAX CHECK
 def verify():
