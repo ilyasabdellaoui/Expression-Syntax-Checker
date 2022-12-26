@@ -40,11 +40,16 @@ def new_window():
 def help():
     showinfo("Help", "This is a simple syntax checker for mathematical expressions. \n"
         "It checks if the expression is valid or not by checking if the parentheses are balanced.\n\n"
+        "New features: \n"
+        "   1. Added menu bar with options for creating a new window, copying, cutting, pasting, and selecting all text in the input field, and quitting the program. \n"
+        "   2. Added context menu for the input field with options for copying, cutting, pasting, and selecting all text. \n"
+        "   3. Improved design and layout of the user interface. \n"
+        "   4. Improved error handling and messaging for invalid syntax. \n\n"
         "Syntax: \n"
-        "1. The expression must be written in infix notation.\n"
-        "2. The expression may contain numbers, alphabets, and various operators.\n"
-        "3. The expression must contain only parentheses: (), [], {}, <>"
-    )
+        "   1. The expression must be written in infix notation.\n"
+        "   2. The expression may contain numbers, alphabets, and various operators.\n"
+        "   3. The expression must contain only parentheses: (), [], {}, <>")
+
     
 def about():
     showinfo("About", "Made with passion by two 'Fessaka' at CPGE Salmane AL Farissi " + chr(0x00A9) + " 2021")
@@ -80,13 +85,11 @@ menubar.add_cascade(label="File", menu=menu1)
 menu1.add_separator()
 menu1.add_command(label="Quit", command=window.quit)
 
-menu2 = Menu(menubar, tearoff=0)
-menu2.add_command(label="Help", command=help)
-menubar.add_cascade(label="Help", menu=menu2)
+menu2=menubar.add_command(label="Help", command=help)
 window.config(menu=menubar)
 
-menu3 = Menu(menubar, tearoff=0)
-menubar.add_command(label="About", command=about)
+
+menu3=menubar.add_command(label="About", command=about)
 window.config(menu=menubar)
 
 # Callback function to display the context menu
