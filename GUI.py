@@ -49,13 +49,36 @@ def help():
 def about():
     showinfo("About", "Made with passion by two 'Fessaka' at CPGE Salmane AL Farissi " + chr(0x00A9) + " 2021")
 
+def copy():
+    window.clipboard_clear()
+    window.clipboard_append(input_entry.selection_get())
+    return "break"
+
+def paste():
+    input_entry.insert("insert", window.clipboard_get())
+    return "break"
+
+def cut():
+    window.clipboard_clear()
+    window.clipboard_append(input_entry.selection_get())
+    input_entry.delete("sel.first", "sel.last")
+    return "break"
+
+def select_all():
+    input_entry.select_range(0, 'end')
+    return "break"
+
 menubar = Menu(window)
 
 menu1 = Menu(menubar, tearoff=0)
 menu1.add_command(label="New", command=new_window)
 menu1.add_separator()
-menu1.add_command(label="Quit", command=window.quit)
+menu1.add_command(label="Copy", command=copy)
+menu1.add_command(label="Cut", command=cut)
+menu1.add_command(label="Paste", command=paste)
 menubar.add_cascade(label="File", menu=menu1)
+menu1.add_separator()
+menu1.add_command(label="Quit", command=window.quit)
 
 menu2 = Menu(menubar, tearoff=0)
 menu2.add_command(label="Help", command=help)
@@ -65,6 +88,18 @@ window.config(menu=menubar)
 menu3 = Menu(menubar, tearoff=0)
 menubar.add_command(label="About", command=about)
 window.config(menu=menubar)
+
+# Callback function to display the context menu
+def show_context_menu(event):
+    context_menu.post(event.x_root, event.y_root)
+
+# Create the context menu
+context_menu = Menu(window, tearoff=0)
+context_menu.add_command(label="Copy", command=copy)
+context_menu.add_command(label="Cut", command=cut)
+context_menu.add_command(label="Paste", command=paste)
+context_menu.add_separator()
+context_menu.add_command(label="Select All", command=select_all)
 
 #Main frame
 main_frame = LabelFrame(window, bd=0, font=("Trebuchet MS", 25), bg='#363537', fg='White', padx=20, pady=20)
@@ -84,8 +119,11 @@ subheader_label.pack(side="top", fill="x")
 input_frame = Frame(main_frame, bg="#363537", padx=20, pady=20)
 input_frame.pack(fill="x")
 
+
+# Create the entry widget and bind the right mouse button click event to the callback function
 input_var = StringVar()
 input_entry = Entry(input_frame, textvariable=input_var, font=("Trebuchet MS", 20), fg="black", bg="white", width=30)
+input_entry.bind("<Button-3>", show_context_menu)
 input_entry.pack(expand=True, anchor=CENTER)
 
 
