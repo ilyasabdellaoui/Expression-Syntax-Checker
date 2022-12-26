@@ -1,6 +1,6 @@
 <h1 align="center">Expression Syntax Checker 🔍</h1>
 
-<p align="center">
+<p>
 This project is an expression syntax checker that helps users verify the syntax of their mathematical expressions. It was developed using the Tkinter library in Python and has a simple, user-friendly interface.
 
 The program allows users to enter a mathematical expression and checks for any syntax errors, such as unbalanced brackets or invalid characters. If the expression is correctly formatted, a message is displayed indicating that the syntax is correct. If there are any errors, the program highlights the location of the error and suggests a possible solution.
