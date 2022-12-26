@@ -29,18 +29,27 @@ window = Tk()
 window.title("Expression Syntax Checker")
 window.geometry("1080x720")
 window.minsize(800, 450)
-window.iconbitmap("icon.ico")
+window.iconbitmap("assets/icon.ico")
 window.config(bg="#363537")
 
 # MENUBAR
-# MENUBAR
-def alert():
-    showinfo("Alert", "Made with passion by two 'Fessaka' at CPGE Salmane AL Farissi " + chr(0x00A9) + " 2021")
-
 def new_window():
     os.system("python GUI.py")
 
+def help():
+    showinfo("Help", "This is a simple syntax checker for mathematical expressions. \n"
+        "It checks if the expression is valid or not by checking if the parentheses are balanced.\n\n"
+        "Syntax: \n"
+        "1. The expression must be written in infix notation.\n"
+        "2. The expression may contain numbers, alphabets, and various operators.\n"
+        "3. The expression must contain only parentheses: (), [], {}, <>"
+    )
+    
+def about():
+    showinfo("About", "Made with passion by two 'Fessaka' at CPGE Salmane AL Farissi " + chr(0x00A9) + " 2021")
+
 menubar = Menu(window)
+
 menu1 = Menu(menubar, tearoff=0)
 menu1.add_command(label="New", command=new_window)
 menu1.add_separator()
@@ -48,8 +57,12 @@ menu1.add_command(label="Quit", command=window.quit)
 menubar.add_cascade(label="File", menu=menu1)
 
 menu2 = Menu(menubar, tearoff=0)
-menu2.add_command(label="About", command=alert)
+menu2.add_command(label="Help", command=help)
 menubar.add_cascade(label="Help", menu=menu2)
+window.config(menu=menubar)
+
+menu3 = Menu(menubar, tearoff=0)
+menubar.add_command(label="About", command=about)
 window.config(menu=menubar)
 
 #Main frame
