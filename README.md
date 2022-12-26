@@ -25,7 +25,12 @@ It was developed by two passionate students at CPGE Salmane AL Farissi as a year
 - User-friendly interface with a sleek design 💻
 
 ## Updates 🆕
+### Version 1.5.1 (2022-12-26)
+- Modified menu bar to include a File section with options for creating a new window, copying, cutting, and pasting text, and quitting the program
+- Added context menu to input entry with options for copying, cutting, and pasting text, and selecting all text
+- Added Help and About sections to menu bar with options for displaying help information and information about the program, respectively
 
+### Version 1.5.0 (2022-12-24)
 - Added menu bar with options for creating a new window and quitting the program
 - Improved design and layout of the user interface
 - Improved error handling and messaging for invalid syntax
