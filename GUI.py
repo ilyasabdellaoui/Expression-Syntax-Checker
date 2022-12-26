@@ -154,8 +154,8 @@ def verify():
         else:
             result_var.set(chr(0x274C) + f' Invalid Syntax: \nAn opening parenthesis at index {sommet(p)+1} is not closed!\nConsider adding a closing parenthesis after this position')
 
-def clear_input():
 #Clears the input field
+def clear_input():
     input_var.set("")
     result_var.set("")
 
