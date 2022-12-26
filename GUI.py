@@ -33,6 +33,7 @@ window.iconbitmap("assets/icon.ico")
 window.config(bg="#363537")
 
 # MENUBAR
+
 def new_window():
     os.system("python GUI.py")
 
