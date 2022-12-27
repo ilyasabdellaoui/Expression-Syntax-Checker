@@ -54,7 +54,7 @@ We welcome any contributions to this project. If you have any suggestions or fou
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/ilyas0421/PROJET_INFO/edit/master/LICENSE.md) file for details.
 
 ## Credits
-- Developed with passion by [@ilyas0421](https://github.com/ilyas0421) and [@othmane-lk](https://github.com/othmane-lk)
+- Developed with passion by [@ilyasabdellaoui](https://github.com/ilyasabdellaoui) and [@othmane-lk](https://github.com/othmane-lk)
 - Icon made by [Flaticon](<a href="https://www.flaticon.com/free-icons/curly-bracket" title="curly bracket icons">Curly bracket icons created by Hight Quality Icons - Flaticon</a>) 🖼
 
 ## Show your support
